@@ -50,4 +50,97 @@ describe Minimax do
         response = minimax.execute({})
         expect(response[:position]).to eq(0)
     end
+
+    it "should block the enemy" do 
+        board = ['O','O','X','X','','','','','X']
+        minimax = Minimax.new(board)
+        response = minimax.execute({})
+        expect(response[:position]).to eq(5)
+    end
+
+    it "should " do
+        board = ['O','X','O','','X','X','','O','X']
+        minimax = Minimax.new(board)
+        response = minimax.execute({})
+        expect(response[:position]).to eq(3)
+    end
+
+    it "should " do
+        board = ['','','O','O','X','X','X','X','O']
+        minimax = Minimax.new(board)
+        response = minimax.execute({})
+        expect(response[:position]).to eq(1)
+    end
+
+    it "should " do
+        board = ['','','','X','','','','','']
+        minimax = Minimax.new(board)
+        response = minimax.execute({})
+        expect(response[:position]).to eq(0)
+    end
+
+    it "should " do
+        board = ['O','','','X','X','','','','']
+        minimax = Minimax.new(board)
+        response = minimax.execute({})
+        expect(response[:position]).to eq(5)
+    end
+
+    it "should " do
+        board = ['O','','','X','X','O','','X','']
+        minimax = Minimax.new(board)
+        response = minimax.execute({})
+        expect(response[:position]).to eq(1)
+    end
+
+    it "should " do
+        board = ['','X','','O','X','X','','','O']
+        minimax = Minimax.new(board)
+        response = minimax.execute({})
+        expect(response[:position]).to eq(7)
+    end
+
+    it "should " do
+        board = ['X','','X','','','','','','O']
+        minimax = Minimax.new(board)
+        response = minimax.execute({})
+        expect(response[:position]).to eq(1)
+    end
+
+    it "should " do
+        board = ['O','','','','','','X','','X']
+        minimax = Minimax.new(board)
+        response = minimax.execute({})
+        expect(response[:position]).to eq(7)
+    end
+
+    it "should " do
+        board = ['X','','','','O','','','','X']
+        minimax = Minimax.new(board)
+        response = minimax.execute({})
+        expect(response[:position]).to eq(1)
+    end
+
+    it "should " do
+        board = ['X','','','','O','','','','X']
+        minimax = Minimax.new(board)
+        response = minimax.execute({})
+        expect(response[:position]).to eq(1)
+    end
+
+    xit "should " do
+        board = ['X','O','','','O','','X','','X']
+        minimax = Minimax.new(board)
+        response = minimax.execute({})
+        expect(response[:position]).to eq(7)
+    end
+
+    it "should " do
+        board = ['','','X','O','O','','X','','X']
+        minimax = Minimax.new(board)
+        response = minimax.execute({})
+        expect(response[:position]).to eq(5)
+    end
+
+
 end

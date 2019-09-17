@@ -1,5 +1,5 @@
 class Minimax
-
+    attr_accessor :player
     WINNING_SETS = [
         [0, 1, 2],
         [3, 4, 5],
@@ -10,12 +10,14 @@ class Minimax
         [0, 4, 8],
         [2, 4, 6]
       ].freeze
+      @player = false
 
     def initialize(board)
         @board = board
     end
 
     def execute(hash)
+        puts "running new test"
         {score: calculate_score(@board), position: generate_position(@board)}
     end
 
@@ -32,15 +34,24 @@ class Minimax
     end
 
     def generate_position(any_board)
+       
         spaces = get_empty_spaces(any_board)
+
         spaces.each do |space|
             temp_board = any_board.dup
-            temp_board[space] = 'O'
-            return space if calculate_score(temp_board) == 1
-            return space if calculate_score(temp_board) == 0
+            mark = @player ? 'X' : 'O'
+            temp_board[space] = mark
+            output = temp_board
+            print output
+            puts ""
+            if (calculate_score(temp_board) == 1 && !@player) || 
+               (calculate_score(temp_board) == -1 && @player)
+                return space    
+            end
+
+            @player = !@player
+            generate_position(temp_board)
         end
+        spaces[0]
     end
-
-
-
 end
